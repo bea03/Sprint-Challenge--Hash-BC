@@ -22,14 +22,24 @@ This sprint challenge is divided up into three parts:  Hash tables coding, block
 
 ## Interview Questions
 
-Explain in detail the workings of a dynamic array:
+* Explain in detail the workings of a dynamic array:
+        ## An array size is specified when created where as a dynamic array is mutable and can be changed if more space is needed during runtime by copying itself to a larger chunk of memory. 
 * What is the runtime complexity to access an array, add or remove from the front, and add or remove from the back?
+        ## Usually adding to end takes 0(1) time but if you have to extend the size it takes O(n) time. Inserting at the start usually takes O(n). To access an array it is 0(1)
 * What is the worse case scenario if you try to extend the storage size of a dynamic array?
+        ## The arrary is already full and instead of taking 0(1) to add to the array, it will take 0(n) to add to it.
 
-Explain how a blockchain is structured. What are the blocks, what is the chain? How is the data organized?
- 
-Explain how proof of work functions. How does it operate. How does this protect the chain from attack. What kind of attack is possible?
+* Explain how a blockchain is structured. What are the blocks, what is the chain? How is the data organized?
+        ## blockchains are linked by hashed values so you can determine if the record is false or lacks integrity. It contains a ledger of transactions organized:
 
+	•	Index - the number of the block in the chain, starting at 0 or 1, depending on the chain.
+	•	Timestamp - the time at which the block was created. This is not required, but is often useful.
+	•	Transactions - the monetary transactions, or any type of data, that is proofed by the block.
+	•	Proof - the proof for this block. We’ll get into this later.
+	•	Previous Hash - the hash of the previous block.
+
+* Explain how proof of work functions. How does it operate. How does this protect the chain from attack. What kind of attack is possible?
+        ## It protects against denial-of-service attacks and spam because the work needed out weighs what is gained. When a block is discovered it is added to the chain and the previous value is hashed. If you try to alter the block, you would have to alter previous hashes or the hash will be rejeceted as not valid. The resources to attack or alter a chain would exceed the benefit.
 ## Project Set Up
 
 #### [Hash Tables]
